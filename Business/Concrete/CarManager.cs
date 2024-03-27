@@ -19,20 +19,17 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-<<<<<<< HEAD
         public void Add(Car car)
         {
             Console.WriteLine((car.Description.Length > 2 && car.DailyPrice > 0) ? "araç eklendi" : "araç bilgileri hatalı");
             _carDal.Add(car);
         }
 
-=======
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
         public List<Car> GetAll() // İş sınıfı başka sınıfları new'lemez.
         {
             return _carDal.GetAll(); 
         }
-<<<<<<< HEAD
+
 
         public List<Car> GetByDailyPrice(decimal min, decimal max)
         {
@@ -48,7 +45,6 @@ namespace Business.Concrete
         {
             return _carDal.GetAll(p=> p.ColorId == id);
         }
-=======
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
+
     }
 }

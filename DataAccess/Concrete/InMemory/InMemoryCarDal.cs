@@ -3,10 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-<<<<<<< HEAD
 using System.Linq.Expressions;
-=======
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,27 +34,24 @@ namespace DataAccess.Concrete.InMemory
             _cars.Remove(carToDelete);
         }
 
-<<<<<<< HEAD
+
         public Car Get(Expression<Func<Car, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-=======
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
         public List<Car> GetAll()
         {
             return _cars; //Veritabanının tümünü döndürüyor
         }
 
-<<<<<<< HEAD
+
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-=======
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
+
         public List<Car> GetById(int carId)
         {
             return _cars.Where(c=> c.Id == carId).ToList();  // Şarta uyan bütün elemanları yeni liste haline getirip oluşturur.
