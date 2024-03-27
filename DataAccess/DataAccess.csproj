@@ -7,11 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
+
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-=======
+
     <Folder Include="Concrete\EntityFramework\" />
->>>>>>> b63a759589c960f81c7c9f0cf0fd6f1454cdac45
   </ItemGroup>
 
   <ItemGroup>
