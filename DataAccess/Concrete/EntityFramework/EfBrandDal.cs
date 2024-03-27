@@ -51,7 +51,12 @@ namespace DataAccess.Concrete.EntityFramework
 
         public void Update(Brand entity)
         {
-            throw new NotImplementedException();
+            using (CarContext context = new CarContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }
