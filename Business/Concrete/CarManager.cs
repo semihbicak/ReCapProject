@@ -4,6 +4,7 @@ using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +22,16 @@ namespace Business.Concrete
 
         public void Add(Car car)
         {
-            Console.WriteLine((car.Description.Length > 2 && car.DailyPrice > 0) ? "araç eklendi" : "araç bilgileri hatalı");
+            if (car.Description.Length > 2 && car.DailyPrice > 0)
+            {
+                throw new Exception("Bu aracı ekleyemezsiniz.");
+            }
             _carDal.Add(car);
         }
 
         public List<Car> GetAll() // İş sınıfı başka sınıfları new'lemez.
         {
-            return _carDal.GetAll(); 
+            return _carDal.GetAll();
         }
 
 
@@ -38,12 +42,12 @@ namespace Business.Concrete
 
         public List<Car> GetCarsByBrandId(int id)
         {
-            return _carDal.GetAll(p=>p.BrandId == id);
+            return _carDal.GetAll(p => p.BrandId == id);
         }
 
         public List<Car> GetCarsByColorId(int id)
         {
-            return _carDal.GetAll(p=> p.ColorId == id);
+            return _carDal.GetAll(p => p.ColorId == id);
         }
 
     }

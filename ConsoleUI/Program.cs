@@ -17,24 +17,7 @@ namespace ConsoleUI
                 Console.WriteLine(car.Description);
 
             }
-            Console.WriteLine("------------");
 
-            foreach (var car in carManager.GetCarsByBrandId(6))
-            {
-                Console.WriteLine(car.Description);
-            }
-            Console.WriteLine("------------");
-
-            foreach (var car in carManager.GetCarsByColorId(1))
-            {
-                Console.WriteLine(car.Description);
-            }
-            Console.WriteLine("---------------------");
-            foreach (var car in carManager.GetByDailyPrice(700000, 900000))
-            {
-                Console.WriteLine(car.Description);
-
-            }
         }
     }
 
