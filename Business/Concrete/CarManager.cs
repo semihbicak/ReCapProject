@@ -2,6 +2,7 @@
 using DataAccess.Abstract;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -29,25 +30,29 @@ namespace Business.Concrete
             _carDal.Add(car);
         }
 
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+
         public List<Car> GetAll() // İş sınıfı başka sınıfları new'lemez.
         {
             return _carDal.GetAll();
         }
 
-
-        public List<Car> GetByDailyPrice(decimal min, decimal max)
+        public Car GetById(int id)
         {
-            return _carDal.GetAll(p => p.DailyPrice >= min && p.DailyPrice <= max);
+            return _carDal.Get(c =>  c.Id == id);
         }
 
-        public List<Car> GetCarsByBrandId(int id)
+        public List<CarDetailDto> GetCarDetails()
         {
-            return _carDal.GetAll(p => p.BrandId == id);
+            return _carDal.GetCarDetails();
         }
 
-        public List<Car> GetCarsByColorId(int id)
+        public void Update(Car car)
         {
-            return _carDal.GetAll(p => p.ColorId == id);
+             _carDal.Update(car);
         }
 
     }
