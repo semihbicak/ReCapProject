@@ -9,8 +9,6 @@
   <ItemGroup>
 
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-
-    <Folder Include="Concrete\EntityFramework\" />
   </ItemGroup>
 
   <ItemGroup>
